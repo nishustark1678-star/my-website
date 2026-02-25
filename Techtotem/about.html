@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Techtotem</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#d8cbb3;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#d8cbb3;
+    border-bottom:2px solid #1f3d2b;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+}
+
+.right-nav{
+    display:flex;
+    gap:30px;
+}
+
+.right-nav a{
+    text-decoration:none;
+    color:#222;
+}
+
+/* ABOUT SECTION */
+
+.about{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:100px 80px;
+    gap:60px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h1{
+    font-size:48px;
+    color:#1f3d2b;
+    margin-bottom:30px;
+}
+
+.about-text p{
+    line-height:1.8;
+    max-width:550px;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about{
+    flex-direction:column;
+    padding:60px 20px;
+}
+
+nav{
+    padding:20px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">TECHTOTEM</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="right-nav">
+        <a href="#">Login</a>
+        <a href="#">Add To Cart</a>
+    </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="about">
+
+    <div class="about-text">
+        <h1>Our Story</h1>
+
+        <p>
+        Our story began with a simple vision — to make powerful technology accessible and purposeful.
+        What started as an idea has grown into a platform driven by curiosity, innovation, and continuous learning.
+        </p>
+
+        <br>
+
+        <p>
+        We believe progress comes from understanding how things work and pushing them further.
+        Every step of our journey reflects dedication to quality, improvement, and forward thinking.
+        </p>
+
+        <br>
+
+        <p>
+        We are not just building a brand; we are building a mindset centered on growth and exploration.
+        This is the foundation of who we are and where we are headed.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="about.jpg" alt="About Image">
+    </div>
+
+</section>
+
+</body>
+</html>
