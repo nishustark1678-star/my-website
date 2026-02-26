@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Techtotem</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#d8cbb3;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#d8cbb3;
+    border-bottom:2px solid #1f3d2b;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+}
+
+.right-nav{
+    display:flex;
+    gap:30px;
+}
+
+.right-nav a{
+    text-decoration:none;
+    color:#222;
+}
+
+/* ABOUT SECTION */
+
+.about{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:100px 80px;
+    gap:60px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h1{
+    font-size:48px;
+    color:#1f3d2b;
+    margin-bottom:30px;
+}
+
+.about-text p{
+    line-height:1.8;
+    max-width:550px;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about{
+    flex-direction:column;
+    padding:60px 20px;
+}
+
+nav{
+    padding:20px;
+}
+}
+.cart-icon img{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    vertical-align:middle;
+}
+/* ===== CONTACT DROPDOWN ===== */
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    text-decoration: none;
+    margin: 0 20px;
+    color: #1f2d23;
+    font-weight: 500;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #1f2d23;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when hovering on Contact */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">TECHTOTEM</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+       <div class="dropdown">
+    <a href="contact.html" class="dropbtn">Contact</a>
+    <div class="dropdown-content">
+        <a href="contact.html">General Inquiry</a>
+        <a href="support.html">Customer Support</a>
+        <a href="location.html">Our Location</a>
+    </div>
+</div>
+    </div>
+
+    <div class="right-nav">
+        <a href="#">Login</a>
+        <a href="#">Add To Cart</a>
+        <a href="#" class="cart-icon">
+    <a href="cart.html" class="cart-icon" style="position:relative;">
+    <img src="cart.png" alt="Cart">
+    <span id="cart-count" style="
+        position:absolute;
+        top:-8px;
+        right:-10px;
+        background:red;
+        color:white;
+        border-radius:50%;
+        padding:3px 7px;
+        font-size:12px;
+    ">0</span>
+</a>
+    </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="about">
+
+    <div class="about-text">
+        <h1>Our Story</h1>
+
+        <p>
+        Our story began with a simple vision — to make powerful technology accessible and purposeful.
+        What started as an idea has grown into a platform driven by curiosity, innovation, and continuous learning.
+        </p>
+
+        <br>
+
+        <p>
+        We believe progress comes from understanding how things work and pushing them further.
+        Every step of our journey reflects dedication to quality, improvement, and forward thinking.
+        </p>
+
+        <br>
+
+        <p>
+        We are not just building a brand; we are building a mindset centered on growth and exploration.
+        This is the foundation of who we are and where we are headed.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="about.jpg" alt="About Image">
+    </div>
+
+</section>
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount() {
+    let count = document.getElementById("cart-count");
+    if(count){
+        count.innerText = cart.length;
+    }
+}
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert("Product Added To Cart");
+}
+
+window.onload = function() {
+    updateCartCount();
+};
+</script>
+</body>
+</html>
