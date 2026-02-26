@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techtotem</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#d8cbb3;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#d8cbb3;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+}
+
+.right-nav{
+    display:flex;
+    gap:30px;
+}
+
+.right-nav a{
+    text-decoration:none;
+    color:#222;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:85vh;
+    background:url("hero.jpg") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    text-align:center;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+}
+
+.hero h1{
+    position:relative;
+    color:white;
+    font-size:48px;
+    max-width:800px;
+    z-index:1;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    padding:80px 100px;
+    text-align:center;
+}
+
+.products h2{
+    font-size:42px;
+    margin-bottom:60px;
+}
+
+.product-grid{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.product-card{
+    background:#f3ead8;
+    padding:30px;
+    border-radius:25px;
+    width:260px;
+}
+
+.product-card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.product-card h3{
+    margin:20px 0 10px;
+}
+
+.price{
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.cart-btn{
+    background:#1f3d2b;
+    color:white;
+    border:none;
+    padding:10px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* ================= BRAND VISION ================= */
+
+.vision{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    padding:100px;
+    flex-wrap:wrap;
+}
+
+.vision img{
+    width:400px;
+    max-width:100%;
+}
+
+.vision-text{
+    max-width:500px;
+}
+
+.vision-text h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.vision-text p{
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.learn-btn{
+    background:#1f3d2b;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#cfc1a8;
+    padding:40px 100px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+footer h4{
+    margin-bottom:10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+nav{
+    padding:20px;
+}
+
+.products{
+    padding:60px 20px;
+}
+
+.vision{
+    padding:60px 20px;
+}
+
+footer{
+    padding:40px 20px;
+    flex-direction:column;
+}
+}
+/* FAQ SECTION */
+
+.faq{
+    padding:100px 80px;
+    background:#f3ead8;
+}
+
+.faq h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#1f3d2b;
+}
+
+.faq-item{
+    margin-bottom:20px;
+    border-bottom:1px solid #ccc;
+}
+
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    text-align:left;
+    font-size:18px;
+    padding:15px 0;
+    cursor:pointer;
+    font-weight:bold;
+    color:#1f3d2b;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:0.3s ease;
+}
+
+.faq-answer p{
+    padding-bottom:15px;
+    color:#444;
+}
+.cart-icon img{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    vertical-align:middle;
+}
+/* ===== CONTACT DROPDOWN ===== */
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    text-decoration: none;
+    margin: 0 20px;
+    color: #1f2d23;
+    font-weight: 500;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #1f2d23;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when hovering on Contact */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">TECHTOTEM</div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+    <a href="contact.html" class="dropbtn">Contact</a>
+    <div class="dropdown-content">
+        <a href="contact.html">General Inquiry</a>
+        <a href="support.html">Customer Support</a>
+        <a href="location.html">Our Location</a>
+    </div>
+</div>
+    </div>
+
+    <div class="right-nav">
+        <a href="#">Login</a>
+        <a href="#">Add To Cart</a>
+        <a href="cart.html" class="cart-icon" style="position:relative;">
+    <img src="cart.png" alt="Cart">
+    <span id="cart-count" style="
+        position:absolute;
+        top:-8px;
+        right:-10px;
+        background:red;
+        color:white;
+        border-radius:50%;
+        padding:3px 7px;
+        font-size:12px;
+    ">0</span>
+</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Powering Innovation with Precision Engineering.</h1>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="products">
+    <h2>Featured Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Fresh Flow</h3>
+
+            <!-- ADD DESCRIPTION HERE -->
+    <p class="description">
+        This is the product description. You can write details here later.
+    </p>
+
+            <div class="price">₹00.00</div>
+            <button class="cart-btn" onclick="addToCart('Fresh Flow', 0)">
+ADD TO CART
+</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product Name</h3>
+            
+            <!-- ADD DESCRIPTION HERE -->
+    <p class="description">
+        This is the product description. You can write details here later.
+    </p>
+
+            <p class="price">₹00.00</p>
+            <button class="cart-btn" onclick="addToCart('Fresh Flow', 0)">
+ADD TO CART
+</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Product Name</h3>
+            
+            <!-- ADD DESCRIPTION HERE -->
+    <p class="description">
+        This is the product description. You can write details here later.
+    </p>
+
+            <p class="price">₹00.00</p>
+            <button class="cart-btn" onclick="addToCart('Fresh Flow', 0)">
+ADD TO CART
+</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- BRAND VISION -->
+<section class="vision">
+    <img src="logo.png" alt="Techtotem Logo">
+
+    <div class="vision-text">
+        <h2>Our Brand Vision</h2>
+        <p>
+            TechTotem envisions a future where innovation meets simplicity.
+            We create powerful, reliable, and smart electrical products
+            designed to improve everyday life and drive meaningful change.
+        </p>
+        <button class="learn-btn">LEARN MORE</button>
+    </div>
+</section>
+<!-- FAQ SECTION -->
+<section class="faq">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <button class="faq-question">1. What makes TechTotem products unique?</button>
+        <div class="faq-answer">
+            <p>
+            TechTotem products are designed with precision engineering and a focus on simplicity.
+            We combine performance, durability, and modern design to deliver reliable technology.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">2. Do you offer warranty on your products?</button>
+        <div class="faq-answer">
+            <p>
+            Yes, all our products come with a standard warranty to ensure quality and customer satisfaction.
+            Warranty details are provided with each product.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">3. How can I place an order?</button>
+        <div class="faq-answer">
+            <p>
+            You can place an order directly through our website by adding products to your cart
+            and completing the checkout process.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">4. Do you provide customer support?</button>
+        <div class="faq-answer">
+            <p>
+            Absolutely. Our support team is available to assist you with product queries,
+            technical help, and after-sales support.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">5. What is your vision for the future?</button>
+        <div class="faq-answer">
+            <p>
+            Our vision is to create accessible and impactful technology that improves everyday life
+            while continuously innovating for the future.
+            </p>
+        </div>
+    </div>
+
+</section>
+<!-- FOOTER -->
+<footer>
+    <div>
+        <h4>Techtotem</h4>
+        <p>Unique Electrical Products Engineered by The Void</p>
+    </div>
+
+    <div>
+        <h4>Location</h4>
+        <p>89/6 Chandigarh Sector 8</p>
+    </div>
+
+      <div>
+        <h4>Follow us</h4>
+         <a href="https://instagram.com/yourusername" target="_blank">
+                Nishu Gupta
+            </a>
+    </div>
+
+    <div>
+        <h4>Contact</h4>
+        <p>techtotemenquiry@gmail.com</p>
+    </div>
+</footer>
+<script>
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(question => {
+    question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+
+        if(answer.style.maxHeight){
+            answer.style.maxHeight = null;
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+    });
+});
+</script>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount() {
+    let count = document.getElementById("cart-count");
+    if(count){
+        count.innerText = cart.length;
+    }
+}
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert("Product Added To Cart");
+}
+
+window.onload = function() {
+    updateCartCount();
+};
+
+</script>
+</body>
+</html>
