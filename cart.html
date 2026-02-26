@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart - Techtotem</title>
+
+<style>
+body{
+    margin:0;
+    padding:40px;
+    font-family: Arial, sans-serif;
+    background:#d8cbb3;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.cart-container{
+    max-width:800px;
+    margin:auto;
+}
+
+.cart-item{
+    background:#f3ead8;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-item h3{
+    margin:0;
+}
+
+.remove-btn{
+    background:#b22222;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.total{
+    text-align:right;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:30px;
+}
+
+.empty{
+    text-align:center;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Your Cart</h1>
+
+<div class="cart-container" id="cart-container"></div>
+
+<div class="total" id="total-price"></div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cart-container");
+let totalDiv = document.getElementById("total-price");
+
+function displayCart(){
+    container.innerHTML = "";
+    let total = 0;
+
+    if(cart.length === 0){
+        container.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+        totalDiv.innerHTML = "";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+
+        total += Number(item.price);
+
+        container.innerHTML += `
+            <div class="cart-item">
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>₹${item.price}</p>
+                </div>
+                <button class="remove-btn" onclick="removeItem(${index})">
+                    Remove
+                </button>
+            </div>
+        `;
+    });
+
+    totalDiv.innerHTML = "Total: ₹" + total;
+}
+
+function removeItem(index){
+    cart.splice(index,1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+displayCart();
+
+</script>
+
+</body>
+</html>
