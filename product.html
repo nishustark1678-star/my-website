@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Techtotem</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#d8cbb3;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:#d8cbb3;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#222;
+}
+
+.right-nav{
+    display:flex;
+    gap:30px;
+}
+
+.right-nav a{
+    text-decoration:none;
+    color:#222;
+}
+
+/* HERO SECTION */
+
+.product-hero{
+    display:flex;
+    height:90vh;
+}
+
+.product-hero-left{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px;
+}
+
+.product-hero-left h1{
+    font-size:48px;
+    max-width:500px;
+    color:#1f3d2b;
+}
+
+.product-hero-right{
+    flex:1;
+    background:url("product-hero.jpg") center/cover no-repeat;
+}
+
+/* PRODUCT GRID */
+
+.products{
+    padding:100px 80px;
+}
+
+.products h2{
+    font-size:42px;
+    margin-bottom:60px;
+    text-align:center;
+    color:#1f3d2b;
+}
+
+.product-grid{
+    display:flex;
+    gap:50px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.product-card{
+    background:#f3ead8;
+    padding:25px;
+    width:280px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.product-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.product-card h3{
+    margin:15px 0 5px;
+}
+
+.product-card p{
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.cart-btn{
+    background:#1f3d2b;
+    color:white;
+    border:none;
+    padding:10px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+    display:flex;
+    height:80vh;
+}
+
+.testimonial-left{
+    flex:1;
+    background:url("testimonial.jpg") center/cover no-repeat;
+}
+
+.testimonial-right{
+    flex:1;
+    background:#1f3d2b;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px;
+    text-align:center;
+}
+
+.testimonial-right p{
+    font-size:20px;
+    max-width:500px;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:100px 80px;
+}
+
+.contact h2{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#1f3d2b;
+}
+
+.contact form{
+    max-width:600px;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:20px;
+    border:none;
+    background:#f3ead8;
+}
+
+.contact button{
+    background:#1f3d2b;
+    color:white;
+    padding:12px 30px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.product-hero{
+    flex-direction:column;
+    height:auto;
+}
+
+.testimonial{
+    flex-direction:column;
+    height:auto;
+}
+
+nav{
+    padding:20px;
+}
+
+.products,
+.contact{
+    padding:60px 20px;
+}
+}
+.cart-icon img{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    vertical-align:middle;
+}
+/* ===== CONTACT DROPDOWN ===== */
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    text-decoration: none;
+    margin: 0 20px;
+    color: #1f2d23;
+    font-weight: 500;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #1f2d23;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when hovering on Contact */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">TECHTOTEM</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About</>
+        <div class="dropdown">
+    <a href="contact.html" class="dropbtn">Contact</a>
+    <div class="dropdown-content">
+        <a href="contact.html">General Inquiry</a>
+        <a href="support.html">Customer Support</a>
+        <a href="location.html">Our Location</a>
+    </div>
+</div>
+    </div>
+
+    <div class="right-nav">
+        <a href="#">Login</a>
+        <a href="#">Add To Cart</a>
+        <a href="#" class="cart-icon">
+    <a href="cart.html" class="cart-icon" style="position:relative;">
+    <img src="cart.png" alt="Cart">
+    <span id="cart-count" style="
+        position:absolute;
+        top:-8px;
+        right:-10px;
+        background:red;
+        color:white;
+        border-radius:50%;
+        padding:3px 7px;
+        font-size:12px;
+    ">0</span>
+</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="product-hero">
+    <div class="product-hero-left">
+        <h1>Explore the best technology that human can offers</h1>
+    </div>
+    <div class="product-hero-right"></div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="product1.jpg">
+            <h3>Fresh Flow</h3>
+ <!-- ADD DESCRIPTION HERE -->
+    <p class="description">
+        This is the product description. You can write details here later.
+    </p>
+            <p>Designed for ease and reliable performance.</p>
+            <div class="price">₹00.00</div>
+            <button class="cart-btn" onclick="addToCart('Fresh Flow', 0)">
+ADD TO CART
+</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg">
+            <h3>Product Name</h3>
+<!-- ADD DESCRIPTION HERE -->
+    <p class="description">
+        This is the product description. You can write details here later.
+    </p>
+            <p>Built with precision and smart engineering.</p>
+            <div class="price">₹00.00</div>
+            <button class="cart-btn" onclick="addToCart('Fresh Flow', 0)">
+ADD TO CART
+</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product3.jpg">
+            <h3>Product Name</h3>
+<!-- ADD DESCRIPTION HERE -->
+    <p class="description">
+        This is the product description. You can write details here later.
+    </p>
+            <p>Powerful performance for everyday needs.</p>
+            <div class="price">₹.00</div>
+            <button class="cart-btn" onclick="addToCart('Fresh Flow', 0)">
+ADD TO CART
+</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+    <div class="testimonial-left"></div>
+
+    <div class="testimonial-right">
+        <p>
+        "Communication was top-notch and the final outcome was even better than we imagined. A great experience all around."
+        <br><br>— Former Customer
+        </p>
+    </div>
+</section>
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount() {
+    let count = document.getElementById("cart-count");
+    if(count){
+        count.innerText = cart.length;
+    }
+}
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert("Product Added To Cart");
+}
+
+window.onload = function() {
+    updateCartCount();
+};
+</script>
+</body>
+</html>
